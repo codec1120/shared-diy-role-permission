@@ -20,7 +20,7 @@
   "extra": {
       "laravel": {
           "providers": [
-              "DIYRolePermission\\RolePermissionServiceProvider"
+              "DIYRolePermission\\Shared\\RolePermissionServiceProvider"
           ]
       }
   },
