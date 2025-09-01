@@ -1,6 +1,6 @@
 <?php
 
-namespace DIYRolePermission;
+namespace DIYRolePermission\Shared;
 
 use Illuminate\Support\ServiceProvider;
 
