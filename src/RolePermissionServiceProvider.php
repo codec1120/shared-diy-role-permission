@@ -10,8 +10,8 @@ class RolePermissionServiceProvider extends ServiceProvider
     {
         // Merge package config with app config
         $this->mergeConfigFrom(
-            __DIR__ . '/config/RolePermission.php',
-            'RolePermission'
+            __DIR__ . '/config/role-permission.php',
+            'role-permission'
         );
     }
 
@@ -19,7 +19,7 @@ class RolePermissionServiceProvider extends ServiceProvider
     {
         // Allow publishing of config so project can override
         $this->publishes([
-            __DIR__ . '/config/RolePermission.php' => config_path('RolePermission.php'),
+            __DIR__ . '/config/role-permission.php' => config_path('role-permission.php'),
         ], 'config');
     }
 }
