@@ -1,5 +1,5 @@
 {
-  "name": "diyrolepermission/diy-role-permissions",
+  "name": "diyrolepermission/diyrolepermission",
   "description": "Shared enums, roles, permissions, and middleware for Laravel microservices",
   "type": "library",
   "license": "MIT",
