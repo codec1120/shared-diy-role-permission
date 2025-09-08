@@ -46,6 +46,6 @@ trait HasRoleAndPermissions
     // Mutators
     public function getPermissionsAttribute(): array
     {
-        return config('rolePermission.role_permission')[$this->role];
+        return collect(config('rolePermission.role_permission')[$this->role])->toArray();
     }
 }
