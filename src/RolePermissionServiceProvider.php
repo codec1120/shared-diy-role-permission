@@ -6,19 +6,28 @@ use Illuminate\Support\ServiceProvider;
 
 class RolePermissionServiceProvider extends ServiceProvider
 {
-     public function register()
+    public function boot(): void
     {
+        // Publish config
+        $this->publishes([
+            __DIR__.'/../../config/rolePermission.php' => config_path('rolePermission.php'),
+        ], 'config');
+
+        // Ensure keys exist
+        $this->ensureKeysExist();
+    }
+
+    /**
+     * Register bindings and merge config
+     */
+    public function register(): void
+    {
+        // Merge default config so package works even if host app doesn't publish it
         $this->mergeConfigFrom(
-            __DIR__.'/../config/role-permission.php',
-            'role-permission'
+            __DIR__.'/../../config/rolePermission.php',
+            'rolePermission'
         );
     }
 
-    public function boot()
-    {
-        $this->publishes([
-            __DIR__.'/../config/role-permission.php' => config_path('role-permission.php'),
-        ], 'config');
-    }
 
 }
