@@ -31,7 +31,7 @@ trait HasRoleAndPermissions
      */
     public function hasPermission(string|array $permissions, bool $requireAll = false): bool
     {
-        $userRolePermissions = config('RolePermission.role_permission');
+        $userRolePermissions = config('rolePermission.role_permission');
         $permissions = (array) $permissions;
         $rolePermissions = $userRolePermissions[$this->role] ?? [];
 
@@ -46,6 +46,6 @@ trait HasRoleAndPermissions
     // Mutators
     public function getPermissionsAttribute(): array
     {
-        return config('RolePermission.permissions')[$this->role];
+        return config('rolePermission.permissions')[$this->role];
     }
 }
